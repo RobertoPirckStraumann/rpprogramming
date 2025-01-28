@@ -26,14 +26,14 @@ publishing {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
 
-            groupId = project.group.toString()  // Ensuring consistency with global group
-            artifactId = "conversion-library"  // Set your artifact ID here
-            version = project.version.toString()  // Ensuring consistency with global version
+            groupId = project.group.toString()
+            artifactId = "conversion-library"
+            version = project.version.toString()
 
             pom {
                 name.set("Conversion Library")
                 description.set("A Java library for temperature and distance conversions.")
-                url.set("https://github.com/RobertoPirckStraumann/rpprogramming")  // Correct URL to your GitHub repo
+                url.set("https://github.com/RobertoPirckStraumann/rpprogramming")
             }
         }
     }
@@ -41,7 +41,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/RobertoPirckStraumann/rpprogramming")  // Correct GitHub Packages URL
+            url = uri("https://maven.pkg.github.com/RobertoPirckStraumann/rpprogramming")
 
             credentials {
                 username = (project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")).toString()
